@@ -1,14 +1,32 @@
-import { Link } from 'react-router-dom';
-import About from './About';
-import Home from './Home';
-import Services from './Services';
+import { NavLink } from 'react-router-dom';
 
 const Nav = () => {
 	return (
 		<div className="flex gap-x-4">
-			<Link to="/">Home</Link>
-			<Link to="/about">About</Link>
-			<Link to="/services">Services</Link>
+			<NavLink
+				style={(e) =>
+					e.isActive ? { textDecoration: 'underline' } : {}
+				}
+				className={(e) => (e.isActive ? 'text-red-600' : '')}
+				to="/">
+				Home
+			</NavLink>
+			<NavLink
+				style={(e) =>
+					e.isActive ? { textDecoration: 'underline' } : {}
+				}
+				className={(e) => (e.isActive ? 'text-red-600' : '')}
+				to="/about">
+				About
+			</NavLink>
+			<NavLink
+				style={(e) =>
+					e.isActive ? { textDecoration: 'underline' } : {}
+				}
+				className={(e) => (e.isActive ? 'text-red-600' : '')}
+				to="/services">
+				Services
+			</NavLink>
 		</div>
 	);
 };

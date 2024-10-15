@@ -17,7 +17,7 @@ const App = () => {
 				<Route path="/" element={<Home />} />
 				<Route path="/about" element={<About />} />
 				<Route path="/services" element={<Services />} />
-
+				{/* for all the wild card routes "*" is used, and this last path should be written in the last of all routes */}
 				<Route path="*" element={<Pagenotfound />} />
 			</Routes>
 		</div>
