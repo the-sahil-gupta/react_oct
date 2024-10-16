@@ -5,6 +5,8 @@ import Home from './components/Home';
 import About from './components/About';
 import Services from './components/Services';
 import Pagenotfound from './components/Pagenotfound';
+import List from './components/LIst';
+import ListItem from './components/Listitem';
 
 const App = () => {
 	return (
@@ -17,6 +19,8 @@ const App = () => {
 				<Route path="/" element={<Home />} />
 				<Route path="/about" element={<About />} />
 				<Route path="/services" element={<Services />} />
+				<Route path="/list" element={<List />} />
+				<Route path="/list/:i" element={<ListItem />} />
 				{/* for all the wild card routes "*" is used, and this last path should be written in the last of all routes */}
 				<Route path="*" element={<Pagenotfound />} />
 			</Routes>
