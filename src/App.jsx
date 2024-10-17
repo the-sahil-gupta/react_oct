@@ -19,8 +19,14 @@ const App = () => {
 				<Route path="/" element={<Home />} />
 				<Route path="/about" element={<About />} />
 				<Route path="/services" element={<Services />} />
-				<Route path="/list" element={<List />} />
-				<Route path="/list/:i" element={<ListItem />} />
+				{/* <Route path="/list" element={<List />} />
+				<Route path="/list/:i" element={<ListItem />} /> */}
+				<Route path="/list" element={<List />}>
+					<Route path="/list/:i" element={<ListItem />} />
+					{/* the blow one is also correct */}
+					{/* <Route path=":i" element={<ListItem />} /> */}
+				</Route>
+
 				{/* for all the wild card routes "*" is used, and this last path should be written in the last of all routes */}
 				<Route path="*" element={<Pagenotfound />} />
 			</Routes>

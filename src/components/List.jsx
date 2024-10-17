@@ -1,24 +1,24 @@
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 const List = () => {
 	return (
-		<div className="list-disc flex flex-col">
-			<li>
-				<Link to="/list/item1" className="list">
+		<>
+			<div className="list-disc">
+				<Link className="list-item" to="/list/item1">
 					Item 1
 				</Link>
-			</li>
-			<li>
-				<Link to="/list/item2" className="list">
+
+				<Link className="list-item" to="/list/item2">
 					Item 2
 				</Link>
-			</li>
-			<li>
-				<Link to="/list/item3" className="list">
+
+				<Link className="list-item" to="/list/item3">
 					Item 3
 				</Link>
-			</li>
-		</div>
+			</div>
+			<hr className="my-8 border-2 border-red-600 rounded" />
+			<Outlet />
+		</>
 	);
 };
 
