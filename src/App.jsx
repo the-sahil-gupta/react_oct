@@ -8,15 +8,14 @@ import Pagenotfound from './components/Pagenotfound';
 import List from './components/LIst';
 import ListItem from './components/Listitem';
 import { useMemo, useState } from 'react';
+import MemoDemo from './components/MemoDemo';
 
 const App = () => {
 	const [count, setCount] = useState(0);
-
-	const bigFunc = () => {
-		for (let i = 0; i < 1000000000; i++) {}
+	const [memodata, setmemodata] = useState('Memo data');
+	const memodataHandler = () => {
+		setmemodata('Memo data changed');
 	};
-	const memoizedBigFunc = useMemo(bigFunc, []);
-	// const memoizedBigFunc = useMemo(bigFunc, [count]);
 
 	return (
 		<div className="bg-zinc-700 h-screen pt-10">
@@ -25,7 +24,6 @@ const App = () => {
 				<br />
 				<hr />
 				<h1 className="text-5xl font-bold">{count}</h1>
-				{memoizedBigFunc}
 				<button
 					onClick={() => {
 						setCount(count + 1);
@@ -33,6 +31,15 @@ const App = () => {
 					className="px-4 py-2 rounded bg-red-100">
 					Add 1
 				</button>
+
+				<MemoDemo memodata={memodata} memodataHandler={memodataHandler} />
+				{/* <button
+					onClick={() => {
+						setmemodata('Memo data changed');
+					}}
+					className="px-4 py-2 rounded bg-red-100">
+					Change Memo Data
+				</button> */}
 				<hr />
 				<br />
 				<Routes>
